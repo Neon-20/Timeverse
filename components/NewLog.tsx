@@ -14,10 +14,46 @@ import { Label } from "@/components/ui/label";
 import { GrAdd } from "react-icons/gr";
 import { DatePicker } from "./DatePicker";
 import { useLogStore } from "@/store";
+import {toast} from "sonner";
+import dayjs from "dayjs";
 
 export default function NewLog() {
   const log = useLogStore((state: any) => state.log);
   const setLog = useLogStore((state: any) => state.setLog);
+  const setLogs = useLogStore((state: any) => state.setLogs);
+  const logs = useLogStore((state:any)=>state.setLogs)
+
+  const closeDialog = () =>{
+    document.getElementById("close-btn")?.click();
+  } 
+  const validateLog = () =>{
+    if(!log.date || !log.hours){
+      toast.error("Date or hour can't be empty",{
+        duration:2000
+      })
+    }
+    else if(log.hours>=24){
+      toast.error("Please enter a valid hour.",{
+        duration:2000
+      })
+    }
+  }
+  const submitLog = () =>{
+  try{
+    validateLog();
+    setLogs(log,dayjs(log.date).format("YYYY-MM-DD"));
+    toast.success("SuccessFully created Log.",{
+      duration:2000,
+    })
+    closeDialog();
+    //call to supabase from here
+  }
+  catch(e){
+    toast.error("Validation failed",{
+      duration:2000
+    })
+  }
+  }
 
   return (
     <Dialog>
@@ -41,7 +77,7 @@ export default function NewLog() {
           <div className="grid grid-cols-4 items-center gap-4">
             <Label htmlFor="Date" className="text-right">
               Date{" "}
-            </Label>
+            </Label>  
             <DatePicker />
           </div>
           <div className="grid grid-cols-4 items-center gap-4">
@@ -52,11 +88,11 @@ export default function NewLog() {
               id="Hour"
               type="number"
               className="col-span-3"
-              value={log.hour}
+              value={log.hours}
               onChange={(e) => 
                 setLog({
                   ...log,
-                  hour:parseInt(e.target.value),
+                  hours:parseInt(e.target.value),
                   })
               }
             />
@@ -80,7 +116,9 @@ export default function NewLog() {
           </div>
         </div>
         <DialogFooter>
-          <Button type="submit">Save</Button>
+          <Button type="submit"
+          onClick={submitLog}
+          >Save</Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>

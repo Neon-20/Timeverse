@@ -9,7 +9,7 @@ const NavBar  = () => {
     <h1 className="font-medium">TimeVerse</h1>
     </div>
     <ModeToggle/>
-    <Button className="hover:bg-purple-500">
+    <Button className="hover:bg-purple-500 hover:text-white font-semibold">
     LogOut
     </Button>
     </div>
