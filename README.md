@@ -1,7 +1,6 @@
-# TimeVerse: An Activity Log Application
+# TimeVerse: An Activity Log Application 🚀
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![NextJS](https://img.shields.io/badge/NextJS.svg)]
 
 TimeVerse is an open-source activity log application built with Next.js to meet everyone's needs. Keep track of your daily activities, manage your time effectively, and enhance your productivity.
 
@@ -39,13 +38,12 @@ Make sure you have [Node.js](https://nodejs.org/) installed.
    ```bash
    npm run dev
 
-### The app will be accessible at http://localhost:3000.
+### The app will be accessible at http://localhost:3000/auth.
 
 ## Usage
 - Create an account or log in if you already have one.
-- Add your activities and categorize them.
-- Explore reports and insights to optimize your time.
-
+- Add your activities and keep track of your important tasks.
+  
 ## Contributing
 We welcome contributions! Follow these steps to contribute to TimeVerse:
 
@@ -53,7 +51,7 @@ We welcome contributions! Follow these steps to contribute to TimeVerse:
 - Create a branch: `git checkout -b feature/my-feature`.
 - Commit your changes: `git commit -m 'Add my feature'`.
 - Push to the branch: `git push origin feature/my-feature`.
--Open a pull request.
+- Open a pull request.
 
 ## License
 
