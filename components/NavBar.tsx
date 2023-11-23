@@ -32,9 +32,7 @@ const isAuthPage = path === '/auth'
     <div className="flex items-center justify-between">
     <div className="flex items-center gap-4">
     <IoTimer className = "text-xl"/>
-    <Link href = "http://localhost:3000">
     <h1 className="font-medium cursor-pointer">TimeVerse</h1>
-    </Link>
     </div>
     <ModeToggle/>
     {!isAuthPage ?
