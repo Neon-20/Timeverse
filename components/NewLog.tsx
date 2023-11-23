@@ -16,12 +16,16 @@ import { DatePicker } from "./DatePicker";
 import { useLogStore } from "@/store";
 import {toast} from "sonner";
 import dayjs from "dayjs";
+import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
+import { format } from 'date-fns';
 
 export default function NewLog() {
   const log = useLogStore((state: any) => state.log);
   const setLog = useLogStore((state: any) => state.setLog);
   const setLogs = useLogStore((state: any) => state.setLogs);
   const logs = useLogStore((state:any)=>state.setLogs)
+  const supabase = createClientComponentClient();
+
 
   const closeDialog = () =>{
     document.getElementById("close-btn")?.click();
@@ -38,16 +42,27 @@ export default function NewLog() {
       })
     }
   }
-  const submitLog = () =>{
+
+  const submitLog = async () =>{
   try{
     validateLog();
+    const { error } = await 
+    supabase.from("timeverse").upsert({...log,date: dayjs(log.date).format("YYYY-MM-DD")})
+    .select("*")
+    .single();
+    if(!error){
     setLogs(log,dayjs(log.date).format("YYYY-MM-DD"));
     toast.success("SuccessFully created Log.",{
-      duration:2000,
+      duration:1000,
     })
     closeDialog();
-    //call to supabase from here
   }
+  else{
+    toast.error("SupaBase Error",{
+      duration:2000
+    })
+  }
+}
   catch(e){
     toast.error("Validation failed",{
       duration:2000

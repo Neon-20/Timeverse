@@ -1,7 +1,7 @@
 import {create} from "zustand";
 
 export type ILog = {
-    date:Date;
+    date:Date | string,  
     hours:number,
     note:string,
 }
@@ -24,6 +24,16 @@ export const useLogStore = create<LogState>()((set)=>({
     logs:{},
     setDate: (date:Date) => set((state:any)=>({log:{...state.log,date}})),
     setLog: (log:ILog) => set((state:any)=>({log:{...state.log,...log}})),
-    setLogs: (log:ILog,key:string) => set((state:any)=>({logs:{...state.logs,[key]:log}}))
+    setLogs: (log:ILog,key:string) => 
+    set((state:any)=>{
+        const updateLog = {...state.logs,[key]:log}
+        const sortedKeys = Object.keys(updateLog).sort()
+        const sortedObject:{
+            [key:string]:ILog
+        } = {}
+        for(const key of sortedKeys){
+            sortedObject[key] = updateLog[key];
+        }
+        return {logs:sortedObject};
+    })
 }))
-

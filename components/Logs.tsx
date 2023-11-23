@@ -29,11 +29,12 @@ const logs = useLogStore((state:any)=>state.logs)
   <TableBody>
     {Object.keys(logs).map((key)=>{
       const log = logs[key];
+      const date = log.date as Date
       return(
         <TableRow key={key}
         className={cn(log?.hours <= 5 ?"bg-red-400":"")}>
           <TableCell className="font-medium text-md">
-            {log.date.toDateString()}
+            {date.toDateString()}
           </TableCell>
           <TableCell>{log.hours}</TableCell>
           <TableCell>{log.note}</TableCell>
