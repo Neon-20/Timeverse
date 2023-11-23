@@ -13,7 +13,7 @@ const handleLogin = () =>{
     supabase.auth.signInWithOAuth({
         provider:"github",
         options:{
-            redirectTo: `${location.origin}/auth/callback`,
+            redirectTo: `https://timeverse.pranavrajveer.com/auth/callback`,
         }
     })
 }

@@ -20,7 +20,7 @@ const handleLogin = () =>{
     supabase.auth.signInWithOAuth({
         provider:"github",
         options:{
-            redirectTo: `${location.origin}/auth/callback`,
+            redirectTo: `https://timeverse.pranavrajveer.com/auth/callback`,
         }
     })
 }
@@ -32,8 +32,7 @@ const isAuthPage = path === '/auth'
     <div className="flex items-center justify-between">
     <div className="flex items-center gap-4">
     <IoTimer className = "text-xl"/>
-    <h1 className="font-medium cursor-pointer">TimeVerse</h1>
-    </div>
+    <h1 className="font-medium cursor-pointer">TimeVerse</h1>    </div>
     <ModeToggle/>
     {!isAuthPage ?
     <Button
