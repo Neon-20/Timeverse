@@ -6,7 +6,7 @@ https://github.com/Neon-20/Timeverse/assets/55043383/712b9f0e-e515-4ca7-9f95-c85
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-TimeVerse is an open-source activity log application built with Next.js to meet everyone's needs. Keep track of your daily activities, manage your time effectively, and enhance your productivity.
+TimeVerse is an open-source activity log application built with Next.js to meet everyone's needs. Keep track of your daily activities, manage your time effectively, and enhance your productivity
 
 ## Features
 
