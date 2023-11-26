@@ -37,15 +37,17 @@ const isAuthPage = path === '/auth'
     {!isAuthPage ?
     <Button
     onClick={handleSignOut}
-    className="hover:bg-purple-500 hover:text-white font-semibold">
-    LogOut
+    className="btn">
+    <span className="btn-text-one">LogOut</span>
+    <span className="btn-text-two">Bye Bye!</span>
     </Button>
     : 
-    <Button variant={"destructive"}
+    <button
     onClick={handleLogin}
-    className="hover:bg-purple-500 hover:text-white font-bold">
-        LogIn
-    </Button>
+    className="btn">
+    <span className="btn-text-one">LogIn</span>
+    <span className="btn-text-two">Come on In!</span>
+    </button>
     }
     </div>
     );
