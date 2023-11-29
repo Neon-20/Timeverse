@@ -1,5 +1,4 @@
-
-
+# Video Demonstration 
 https://github.com/Neon-20/Timeverse/assets/55043383/712b9f0e-e515-4ca7-9f95-c854567d73bb
 
 # TimeVerse: An Activity Log Application 🚀
