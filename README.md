@@ -17,7 +17,7 @@ TimeVerse is an open-source activity log application built with Next.js to meet 
 
 ### Prerequisites
 
-Make sure you have [Node.js](https://nodejs.org/) installed.
+Make sure you have [Node.js](https://nodejs.org/) installed
 
 ### Installation
 
