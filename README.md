@@ -1,7 +1,7 @@
 # Video Demonstration 
 https://github.com/Neon-20/Timeverse/assets/55043383/712b9f0e-e515-4ca7-9f95-c854567d73bb
 
-# TimeVerse: An Activity Log Application 🚀.
+# TimeVerse: An Activity Log Application 🚀
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
